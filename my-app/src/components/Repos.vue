@@ -103,7 +103,7 @@
     fetchData: function () {
       var xhr = new XMLHttpRequest()
       var self = this
-      xhr.open('GET', 'https://api.github.com/user/repos?access_token=53fbb42711fd37b6812ca58d5a821c261ea66c06')
+      xhr.open('GET', 'https://api.github.com/user/repos?access_token=0a0ae264ca6f434ea87e808a957b45cd3449fd67')
       xhr.onload = function () {
         self.reposEx = JSON.parse(xhr.responseText)
         console.log(self.reposEx.data)

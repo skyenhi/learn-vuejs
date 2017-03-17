@@ -32,7 +32,7 @@
     },
     methods: {
         fetchRepos(name){
-            this.$http.get('https://api.github.com/repos/skyenhi/'+name)
+            this.$http.get('https://api.github.com/repos/skyenhi/'+name+'?access_token=0a0ae264ca6f434ea87e808a957b45cd3449fd67')
             .then(function(response){
                 this.repos = response.body;
             });
@@ -46,7 +46,7 @@
                     description: this.repos.description
                 }
 
-                this.$http.patch('https://api.github.com/repos/skyenhi/'+this.$route.params.id+'?access_token=53fbb42711fd37b6812ca58d5a821c261ea66c06', updRepos)
+                this.$http.patch('https://api.github.com/repos/skyenhi/'+this.$route.params.id+'?access_token=0a0ae264ca6f434ea87e808a957b45cd3449fd67', updRepos)
                     .then(function(response){
                         this.$router.push({path: '/', query: {alert: 'Repos Updated'}});
                     });
