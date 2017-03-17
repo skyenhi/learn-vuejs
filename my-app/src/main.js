@@ -5,7 +5,10 @@ import App from './App'
 import VueRouter from 'vue-router'
 import vueResource from 'vue-resource'
 import Repos from './components/Repos'
+import ReposDetails from './components/ReposDetails'
 import About from './components/About'
+import Add from './components/Add'
+import Edit from './components/Edit'
 
 Vue.use(vueResource)
 Vue.use(VueRouter)
@@ -16,6 +19,9 @@ const router = new VueRouter({
   routes: [
     {path:'/', component: Repos},
     {path: '/about', component: About},
+    {path: '/add', component: Add},
+    {path: '/edit/:id', component: Edit},
+    {path: '/repos/:id', component: ReposDetails},
   ]
 })
 
@@ -33,12 +39,14 @@ new Vue({
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">vRepos</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="/">myRepos</router-link></li>
             <li><router-link to="/about">About</router-link></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><router-link to="/add">Add Repos</router-link></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
