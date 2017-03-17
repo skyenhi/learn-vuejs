@@ -44,7 +44,7 @@
 
              }
 
-                this.$http.post('https://api.github.com/user/repos?access_token=53fbb42711fd37b6812ca58d5a821c261ea66c06', newRepos)
+                this.$http.post('https://api.github.com/user/repos?access_token=0a0ae264ca6f434ea87e808a957b45cd3449fd67', newRepos)
                     .then(function(response){
                         this.$router.push({path: '/', query: {alert: 'Repos Added'}});
                     });

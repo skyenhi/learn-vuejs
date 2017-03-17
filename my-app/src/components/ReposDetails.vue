@@ -26,13 +26,13 @@ export default {
   },
   methods:{
       fetchRepos(name){
-          this.$http.get('https://api.github.com/repos/skyenhi/'+name)
+          this.$http.get('https://api.github.com/repos/skyenhi/'+name+'?access_token=0a0ae264ca6f434ea87e808a957b45cd3449fd67')
           .then(function(response){
             this.repos = response.body;
           });
       },
       deleteRepos(name){
-          this.$http.delete('https://api.github.com/repos/skyenhi/'+name+'?access_token=53fbb42711fd37b6812ca58d5a821c261ea66c06')
+          this.$http.delete('https://api.github.com/repos/skyenhi/'+name+'?access_token=0a0ae264ca6f434ea87e808a957b45cd3449fd67')
           .then(function(response){
             this.$router.push({path: '/', query: {alert: 'Repos Deleted'}});
           });
